@@ -1,0 +1,114 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Login Page */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.login-box h1 { margin-bottom: 20px; }
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login-box button:hover { background: #764ba2; }
+.hint { font-size: 12px; margin-top: 10px; color: #555; }
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: white;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  padding: 20px;
+}
+.sidebar h2 { margin-bottom: 30px; }
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+.sidebar a:hover, .sidebar a.active { background: #3b82f6; }
+
+/* Main Content */
+.main-content { margin-left: 240px; padding: 20px; }
+h1 { margin-bottom: 20px; }
+
+/* Dashboard Cards */
+.cards { display: flex; gap: 20px; }
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+.card span { display: block; font-size: 28px; margin-top: 10px; }
+.card-blue { background: #3b82f6; }
+.card-green { background: #22c55e; }
+.card-orange { background: #f97316; }
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+table th, table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+table th { background: #f1f5f9; }
+
+/* Status Labels */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: white;
+}
+.status.new { background: #3b82f6; }
+.status.contacted { background: #f59e0b; }
+.status.available { background: #22c55e; }
+.status.sold { background: #ef4444; }

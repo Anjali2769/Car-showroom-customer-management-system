@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #f4f4f4;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      padding: 6px 12px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .btn-edit {
+      background:  #007bff;
+    }
+    .btn-save {
+      background: #4CAF50;
+      color: #fff;
+    }
+    .btn-add {
+      background: #007bff;
+      color: white;
+    }
+    .btn-delete {
+      background: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>SCAR Showroom CRM</h2>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="customers.html" class="active">👥 Customers</a>
+    <a href="leads.html">📌 Leads</a>
+    <a href="vehicles.html">🚗 Vehicles</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Customers</h1>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <button class="btn btn-add" onclick="addRow()">Add Customer</button>
+      <button class="btn btn-delete" onclick="deleteSelected()">Delete Selected</button>
+    </div>
+
+    <table id="customersTable">
+      <tr>
+        <th>Select</th>
+        <th>ID</th><th>Name</th><th>Phone</th><th>Email</th>
+        <th>Car Model</th><th>Price</th><th>Salesperson</th><th>Action</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>1</td><td>John Doe</td><td>9876543210</td><td>john@example.com</td>
+        <td>Honda Civic</td><td>$20,000</td><td>Mike</td>
+        <td><button class="btn btn-edit" onclick="editRow(this)">Edit</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>2</td><td>Jane Smith</td><td>9123456780</td><td>jane@example.com</td>
+        <td>Toyota Corolla</td><td>$18,500</td><td>Sarah</td>
+        <td><button class="btn btn-edit" onclick="editRow(this)">Edit</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function editRow(btn) {
+      let row = btn.parentNode.parentNode;
+      let cells = row.querySelectorAll("td");
+      if (btn.innerText === "Edit") {
+        for (let i = 2; i < cells.length - 1; i++) {
+          let text = cells[i].innerText;
+          cells[i].innerHTML = `<input type='text' value='${text}'>`;
+        }
+        btn.innerText = "Save";
+        btn.className = "btn btn-save";
+      } else {
+        for (let i = 2; i < cells.length - 1; i++) {
+          let input = cells[i].querySelector("input");
+          cells[i].innerText = input.value;
+        }
+        btn.innerText = "Edit";
+        btn.className = "btn btn-edit";
+      }
+    }
+
+    function addRow() {
+      let table = document.getElementById("customersTable");
+      let rowCount = table.rows.length;
+      let row = table.insertRow(rowCount);
+      row.innerHTML

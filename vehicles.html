@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicles</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .action-bar {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      font-size: 16px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+    .add-btn {
+      background: #2196F3;
+      
+    }
+    .edit-btn {
+      background: #2196F3;
+    }
+    .add-btn:hover {
+      background: #0b7dda;
+    }
+    .edit-btn:hover {
+      background: #0b7dda;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>SCAR Showroom CRM</h2>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="customers.html">👥 Customers</a>
+    <a href="leads.html">📌 Leads</a>
+    <a href="vehicles.html" class="active">Vehicles</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Vehicles</h1>
+
+    <!-- Action Buttons -->
+    <div class="action-bar">
+      <button class="btn add-btn">Add </button>
+      <button class="btn edit-btn">Edit </button>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Fuel</th>
+        <th>Year</th>
+        <th>Tax</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+        <td>Petrol</td>
+        <td>2021</td>
+        <td>₹50,000</td>
+        <td>₹10,00,000</td>
+        <td><span class="status available">Available</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Honda</td>
+        <td>Civic</td>
+        <td>Diesel</td>
+        <td>2020</td>
+        <td>₹60,000</td>
+        <td>₹15,00,000</td>
+        <td><span class="status sold">Sold</span></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
